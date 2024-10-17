@@ -1,0 +1,13 @@
+<script>
+  // This code notifies Google Tag Manager when a wpForm is submitted
+  var elementsArray = document.querySelectorAll('[id^="wpforms-form-"]');
+  elementsArray.forEach(function(elem) {
+	elem.addEventListener("submit", function(e) {
+  	window.dataLayer = window.dataLayer || [];
+  	window.dataLayer.push({
+    	event: "wpFormSubmit",
+    	wpFormElement: event.target
+  	});
+	});
+  });
+</script>
